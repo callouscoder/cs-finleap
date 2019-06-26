@@ -5,6 +5,8 @@ import { bindActionCreators } from "redux";
 
 import * as getLocations from "../actions/locations";
 
+import ToggleButton from "./ToggleButton"
+
 class LocationsUI extends Component {
     constructor(props) {
         super(props);
@@ -29,7 +31,7 @@ class LocationsUI extends Component {
         const targetParticipantNames = document.getElementById('participantNames');
     
         const itemNode = document.createElement('li');
-        const itemContent = `<input type="text" className="participant-name" placeholder="Type here" value="Max Mustermann" />
+        const itemContent = `<span><input type="text" className="participant-name" placeholder="Type here" value="Max Mustermann" /></span>
         <ul>
           <li>
             <button className="option-a"></button>
@@ -71,6 +73,38 @@ class LocationsUI extends Component {
           
       }
 
+    handleClick = (option, status) => {
+        if (option === "a" && status === true) {
+            this.setState({
+                votesA: this.state.votesA + 1
+            })
+        } else if (option === "a" && status === false) {
+            this.setState({
+                votesA: this.state.votesA - 1
+            })
+        }
+
+        if (option === "b" && status === true) {
+            this.setState({
+                votesB: this.state.votesB + 1
+            })
+        } else if (option === "b" && status === false) {
+            this.setState({
+                votesB: this.state.votesB - 1
+            })
+        }
+
+        if (option === "c" && status === true) {
+            this.setState({
+                votesC: this.state.votesC + 1
+            })
+        } else if (option === "c" && status === false) {
+            this.setState({
+                votesC: this.state.votesC - 1
+            })
+        }
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -100,77 +134,77 @@ class LocationsUI extends Component {
 
                             <ul id="participantNames" className="participant-names">
                             <li>
-                                <input type="text" className="participant-name" placeholder="Type here" value="Max Mustermann" />
+                                <span><input type="text" className="participant-name" placeholder="Type here" value="Max Mustermann" /></span>
 
                                 <ul>
                                 <li>
-                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
+                                    <ToggleButton option="a" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
+                                    <ToggleButton option="b" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
+                                    <ToggleButton option="c" handleClick={this.handleClick} />
                                 </li>
                                 </ul>
                             </li>
                             <li>
-                                <input type="text" className="participant-name" placeholder="Type here" value="Kevin Müller" />
+                                <span><input type="text" className="participant-name" placeholder="Type here" value="Kevin Müller" /></span>
 
                                 <ul>
                                 <li>
-                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
+                                    <ToggleButton option="a" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
+                                    <ToggleButton option="b" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
+                                    <ToggleButton option="c" handleClick={this.handleClick} />
                                 </li>
                                 </ul>
                             </li>
                             <li>
-                                <input type="text" className="participant-name" placeholder="Type here" value="Dennis Mustermann" />
+                                <span><input type="text" className="participant-name" placeholder="Type here" value="Dennis Mustermann" /></span>
 
                                 <ul>
                                 <li>
-                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
+                                    <ToggleButton option="a" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
+                                    <ToggleButton option="b" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
+                                    <ToggleButton option="c" handleClick={this.handleClick} />
                                 </li>
                                 </ul>
                             </li>
                             <li>
-                                <input type="text" className="participant-name" placeholder="Type here" value="Donald Trump" />
+                                <span><input type="text" className="participant-name" placeholder="Type here" value="Donald Trump" /></span>
 
                                 <ul>
                                 <li>
-                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
+                                    <ToggleButton option="a" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
+                                    <ToggleButton option="b" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
+                                    <ToggleButton option="c" handleClick={this.handleClick} />
                                 </li>
                                 </ul>
                             </li>
                             <li>
-                                <input type="text" className="participant-name" placeholder="Type here" value="" />
+                                <span><input type="text" className="participant-name" placeholder="Type here" value="" /></span>
 
                                 <ul>
                                 <li>
-                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
+                                    <ToggleButton option="a" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                    <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
+                                    <ToggleButton option="b" handleClick={this.handleClick} />
                                 </li>
                                 <li>
-                                    <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
+                                    <ToggleButton option="c" handleClick={this.handleClick} />
                                 </li>
                                 </ul>
                             </li>
