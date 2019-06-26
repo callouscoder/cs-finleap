@@ -54,10 +54,11 @@ body {
   }
   .places-table {
     .table-outer {
-      border: 1px solid rgba(black, 0.25);
+      border: 1px solid rgba(black, 0.025);
       margin-top: 20px;
       background: white;
       box-shadow: 2px 2px 5px rgba(black, 0.25);
+      border-top: 0;
     }
     .table-footer {
       button {
@@ -72,7 +73,7 @@ body {
     .participants-list {
       .list-header {
         display: flex;
-        border-bottom: 1px solid rgba(black, 0.25);
+        border-bottom: 1px solid rgba(black, 0.1);
         .list-title {
           color: rgba(black, 0.5);
           font-size: 14px;
@@ -86,7 +87,7 @@ body {
           display: flex;
           margin: 0;
           li {
-              border-left: 1px solid rgba(black, 0.5);
+              border-left: 1px solid rgba(black, 0.1);
               list-style: none;
               margin: 0;
               padding: 0;
@@ -166,25 +167,25 @@ body {
               margin-bottom: 0;
               margin-top: 1px;
               &:last-child button {
-                border-right: 1px solid rgba(black, 0.25);
+                border-right: 1px solid rgba(black, 0.1);
               }
               button {
                 width: 100%;
                 height: 90%;
                 border: 0;
                 background: #fbf5f7;
-                border-left: 1px solid rgba(black, 0.25);
-                border-top: 1px solid rgba(black, 0.25);
-                border-bottom: 1px solid rgba(black, 0.25);
+                border-left: 1px solid rgba(black, 0.1);
+                border-top: 1px solid rgba(black, 0.1);
+                border-bottom: 1px solid rgba(black, 0.1);
                 transition: all .3s ease-out;
                 &:hover {
-                  background: #32c671;
-                  border-color: #32c671;
+                  background: #b6c847;
+                  border-color: #b6c847;
                   position: relative;
                   z-index: 1;
                   &:after {
                     position: absolute;
-                    background-image: url(/Flat_tick_icon.svg.png);
+                    background-image: url('/1024px-White_check.svg.png');
                     height: 100%;
                     width: 30px;
                     display: inline-block;

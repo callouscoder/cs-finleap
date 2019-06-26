@@ -6,6 +6,16 @@ import { bindActionCreators } from "redux";
 import * as getLocations from "../actions/locations";
 
 class LocationsUI extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            votesA: 0,
+            votesB: 0,
+            votesC: 0
+        }
+    }
+
     componentWillMount() {
         this.props.getLocations.getLocations("Berlin");
     }
@@ -36,10 +46,8 @@ class LocationsUI extends Component {
       }
     
       renderLocations = locations => {
-          if (locations.items) {
-              console.log(locations.items);
-              
-              return locations.items.response.venues.map((item, i) => {
+          if (locations.items) {              
+              return locations.items.response.venues.map((item, i) => {                  
                 return (
                     <li key={i}>
                         <article className="location">
@@ -47,7 +55,10 @@ class LocationsUI extends Component {
 
                             <h2 className="location-type">{item.categories[0].pluralName}</h2>
 
-                            <span className="total-votes">6</span>
+                            <span className="total-votes">
+                                {i === 0 ? this.state.votesA : ''}
+                                {i === 1 ? this.state.votesB : ''}
+                                {i === 2 ? this.state.votesC : ''}</span>
                         </article>
                     </li>
                 )
@@ -93,13 +104,13 @@ class LocationsUI extends Component {
 
                                 <ul>
                                 <li>
-                                    <button className="option-a"></button>
+                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-b"></button>
+                                <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-c"></button>
+                                <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
                                 </li>
                                 </ul>
                             </li>
@@ -108,13 +119,13 @@ class LocationsUI extends Component {
 
                                 <ul>
                                 <li>
-                                    <button className="option-a"></button>
+                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-b"></button>
+                                <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-c"></button>
+                                <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
                                 </li>
                                 </ul>
                             </li>
@@ -123,13 +134,13 @@ class LocationsUI extends Component {
 
                                 <ul>
                                 <li>
-                                    <button className="option-a"></button>
+                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-b"></button>
+                                <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-c"></button>
+                                <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
                                 </li>
                                 </ul>
                             </li>
@@ -138,13 +149,13 @@ class LocationsUI extends Component {
 
                                 <ul>
                                 <li>
-                                    <button className="option-a"></button>
+                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-b"></button>
+                                <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-c"></button>
+                                <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
                                 </li>
                                 </ul>
                             </li>
@@ -153,13 +164,13 @@ class LocationsUI extends Component {
 
                                 <ul>
                                 <li>
-                                    <button className="option-a"></button>
+                                    <button className="option-a" onClick={() => this.setState({ votesA: this.state.votesA + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-b"></button>
+                                    <button className="option-b" onClick={() => this.setState({ votesB: this.state.votesB + 1 })}></button>
                                 </li>
                                 <li>
-                                    <button className="option-c"></button>
+                                    <button className="option-c" onClick={() => this.setState({ votesC: this.state.votesC + 1 })}></button>
                                 </li>
                                 </ul>
                             </li>
