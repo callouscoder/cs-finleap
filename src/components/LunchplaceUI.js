@@ -54,7 +54,7 @@ class LocationsUI extends Component {
               }
             );
           } else {
-            return (<strong>loading...</strong>)
+            return (<strong>Loading Berlin based initially...</strong>)
           }
 
           
